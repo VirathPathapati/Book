@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Two Years Later</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #0b0d0b;
+            color: #dedfd8;
+            font-family: Georgia, "Times New Roman", serif;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .book {
+            width: 100%;
+            max-width: 850px;
+            min-height: 100vh;
+
+            padding: 80px 40px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .chapter-number {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: #777c72;
+            margin-bottom: 20px;
+        }
+
+        .chapter-title {
+            font-size: 52px;
+            font-weight: normal;
+            margin: 0 0 60px;
+            color: #f0f0e9;
+        }
+
+        .story {
+            font-size: 20px;
+            line-height: 1.9;
+            min-height: 300px;
+        }
+
+        .story p {
+            margin: 0 0 28px;
+        }
+
+        .continue {
+            margin-top: 50px;
+
+            background: transparent;
+            border: 1px solid #555a52;
+            color: #bfc2b9;
+
+            padding: 14px 28px;
+
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+
+            cursor: pointer;
+
+            transition: 
+                background 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .continue:hover {
+            background: #dfe2d8;
+            color: #0b0d0b;
+            border-color: #dfe2d8;
+        }
+
+        .fade {
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .book {
+                padding: 50px 25px;
+            }
+
+            .chapter-title {
+                font-size: 40px;
+            }
+
+            .story {
+                font-size: 18px;
+                line-height: 1.8;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="book">
+
+        <div class="chapter-number">
+            CHAPTER ONE
+        </div>
+
+        <h1 class="chapter-title">
+            Two Years Later
+        </h1>
+
+        <section id="story" class="story fade">
+            <p>
+                The road had disappeared beneath the grass.
+            </p>
+
+            <p>
+                Not completely.
+            </p>
+
+            <p>
+                A thin strip of black asphalt still showed through in places,
+                cracked into crooked islands beneath roots and moss.
+                White lane markings surfaced every few metres, faded almost to nothing.
+            </p>
+        </section>
+
+        <button class="continue" onclick="nextScene()">
+            CONTINUE
+        </button>
+
+    </main>
+
+    <script>
+
+        const scenes = [
+
+            `
+            <p>The rest belonged to the green.</p>
+
+            <p>
+                It had been raining.
+                Not the violent kind. Just a slow, grey rain that had fallen since morning,
+                soaking through the traveller's coat and turning the earth beside the road into mud.
+            </p>
+
+            <p>They kept walking.</p>
+            `,
+
+            `
+            <p>There was no destination.</p>
+
+            <p>There rarely was anymore.</p>
+
+            <p>
+                A backpack hung from one shoulder.
+                A knife was strapped against their thigh.
+                A nearly empty water bottle knocked quietly against the side of the pack with every step.
+            </p>
+            `,
+
+            `
+            <p>They stopped beside an overturned car.</p>
+
+            <p>
+                The vehicle had once been white.
+                Now it was mostly brown.
+            </p>
+
+            <p>
+                Roots had pushed through the windows.
+                Small flowers had grown inside the cabin,
+                their pale heads trembling whenever the wind passed through.
+            </p>
+            `,
+
+            `
+            <p>The traveller crouched.</p>
+
+            <p>
+                The driver's door was already open.
+            </p>
+
+            <p>Nothing.</p>
+
+            <p>They checked the glove compartment anyway.</p>
+
+            <p>Empty.</p>
+            `,
+
+            `
+            <p>Then they opened the boot.</p>
+
+            <p>
+                A mouldy blanket.
+                A broken torch.
+                Three cans.
+            </p>
+
+            <p>
+                The traveller picked up the cans one by one.
+            </p>
+
+            <p>Two were swollen.</p>
+
+            <p>The third wasn't.</p>
+            `,
+
+            `
+            <p>Beans.</p>
+
+            <p>They smiled.</p>
+
+            <p>Not because it was much.</p>
+
+            <p>Because it was something.</p>
+
+            <p>The can went into the backpack.</p>
+            `,
+
+            `
+            <p>Then they heard it.</p>
+
+            <p>A sound somewhere beyond the trees.</p>
+
+            <p>The traveller froze.</p>
+
+            <p>The rain continued tapping against the leaves.</p>
+            `,
+
+            `
+            <p>They waited.</p>
+
+            <p>Nothing.</p>
+
+            <p>Then, again.</p>
+
+            <p>A slow scrape.</p>
+
+            <p>Something dragging itself across the road.</p>
+            `,
+
+            `
+            <p>A shape moved between the trees.</p>
+
+            <p>Human.</p>
+
+            <p>Or it had once been.</p>
+
+            <p>
+                It stepped onto the road.
+                Its clothes were almost completely covered in green growth.
+            </p>
+            `,
+
+            `
+            <p>
+                Vines ran beneath the fabric and disappeared into its neck.
+                Small leaves had grown from one shoulder.
+            </p>
+
+            <p>It stood there.</p>
+
+            <p>Still.</p>
+
+            <p>The traveller watched it.</p>
+            `,
+
+            `
+            <p>The infected did not notice them.</p>
+
+            <p>That was good.</p>
+
+            <p>
+                They slowly stepped backwards.
+            </p>
+
+            <p>One step.</p>
+
+            <p>Then another.</p>
+            `,
+
+            `
+            <p>Then the infected turned.</p>
+
+            <p>Its head moved toward them.</p>
+
+            <p>The traveller stopped breathing.</p>
+
+            <p>For several seconds, neither moved.</p>
+            `,
+
+            `
+            <p>Then the infected began walking.</p>
+
+            <p>Slowly.</p>
+
+            <p>Never fast.</p>
+
+            <p>They didn't need to be.</p>
+            `,
+
+            `
+            <p>
+                The traveller ran.
+            </p>
+
+            <p>
+                Branches slapped against their face.
+                Mud pulled at their boots.
+                Behind them came the uneven footsteps.
+            </p>
+
+            <p>
+                They vaulted over a fallen tree and kept running.
+            </p>
+            `,
+
+            `
+            <p>The forest opened.</p>
+
+            <p>A steep drop appeared ahead.</p>
+
+            <p>Below was a river.</p>
+
+            <p>Fast.</p>
+
+            <p>Wide.</p>
+            `,
+
+            `
+            <p>Behind them, branches snapped.</p>
+
+            <p>The infected was coming.</p>
+
+            <p>
+                The traveller looked left.
+                Right.
+            </p>
+
+            <p>Then down.</p>
+
+            <p>There.</p>
+            `,
+
+            `
+            <p>
+                A fallen tree stretched from the bank toward a rock below.
+            </p>
+
+            <p>They climbed onto it.</p>
+
+            <p>The infected emerged from the forest.</p>
+
+            <p>It saw them.</p>
+            `,
+
+            `
+            <p>The traveller jumped.</p>
+
+            <p>
+                For one terrible second there was nothing beneath their feet.
+            </p>
+
+            <p>
+                Then they landed hard on the rock.
+            </p>
+
+            <p>Pain shot through their ankle.</p>
+            `,
+
+            `
+            <p>
+                They grabbed a branch.
+            </p>
+
+            <p>Held on.</p>
+
+            <p>Waited.</p>
+
+            <p>
+                The infected reached the edge.
+            </p>
+            `,
+
+            `
+            <p>It stepped forward.</p>
+
+            <p>
+                The river swallowed it.
+            </p>
+
+            <p>The traveller waited.</p>
+
+            <p>Ten seconds.</p>
+
+            <p>Twenty.</p>
+            `,
+
+            `
+            <p>Nothing.</p>
+
+            <p>
+                The traveller finally pulled themselves upright.
+            </p>
+
+            <p>
+                Their ankle hurt.
+                Their hands were bleeding from the bark.
+            </p>
+
+            <p>They looked across the river.</p>
+            `,
+
+            `
+            <p>
+                The forest continued for kilometres.
+            </p>
+
+            <p>
+                Beyond it, barely visible through the rain,
+                something rose above the trees.
+            </p>
+
+            <p>A tower.</p>
+
+            <p>No.</p>
+
+            <p>Several towers.</p>
+            `,
+
+            `
+            <p>
+                The traveller stared.
+            </p>
+
+            <p>
+                They hadn't seen anything like that in months.
+            </p>
+
+            <p>Buildings.</p>
+
+            <p>Not ruins.</p>
+
+            <p>Not entirely.</p>
+            `,
+
+            `
+            <p>One had a light.</p>
+
+            <p>A small yellow light.</p>
+
+            <p>It disappeared.</p>
+
+            <p>Then returned.</p>
+            `,
+
+            `
+            <p>A light.</p>
+
+            <p>Someone was there.</p>
+
+            <p>People.</p>
+
+            <p>
+                The traveller stood very still.
+            </p>
+
+            <p>
+                They had spent two years learning that people
+                were often more dangerous than anything infected.
+            </p>
+            `,
+
+            `
+            <p>
+                But they had also spent two years learning something else.
+            </p>
+
+            <p>You couldn't survive forever alone.</p>
+
+            <p>
+                The traveller tightened the straps of their backpack.
+            </p>
+
+            <p>Then started walking.</p>
+
+            <p>Toward the lights.</p>
+            `
+
+        ];
+
+        let currentScene = 0;
+
+        function nextScene() {
+
+            if (currentScene >= scenes.length) {
+                return;
+            }
+
+            const story = document.getElementById("story");
+
+            story.classList.remove("fade");
+
+            void story.offsetWidth;
+
+            story.innerHTML = scenes[currentScene];
+
+            story.classList.add("fade");
+
+            currentScene++;
+
+            if (currentScene === scenes.length) {
+                document.querySelector(".continue").textContent = "END CHAPTER";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
